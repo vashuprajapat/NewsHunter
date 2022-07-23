@@ -6,10 +6,12 @@ export class NewsItem extends Component {
     return (
       <div className="my-3">
        <div className="card" >
-       <span className="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left: "88%", zIndex: "1"}}>
-          {source}
+        <div style={{display: "flex", justifyContent: "flex-end", position: "absolute", right: '0'}}>
+        <span className="badge rounded-pill bg-danger" >
+            {source}
         </span>
-        <img src={imageUrl} className="card-img-top" style={{height: '15rem'}} alt="this is img"/>
+        </div>
+        <img src={imageUrl} className="card-img-top" style={{height: '15rem'}} alt=""/>
         <div className="card-body">
             <h5 className="card-title">{title}...</h5>
             <p className="card-text">{description}...</p>

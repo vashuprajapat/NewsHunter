@@ -3,8 +3,9 @@ import React, { Component } from 'react'
 export default class Footer extends Component {
   render() {
     return (
-        <div className="container">
-        <footer className="py-5">
+      <>
+        <footer className="py-5 bg-light">
+          <div className="container">
           <div className="row">
             <div className="col-2">
               <h5>Section</h5>
@@ -53,15 +54,16 @@ export default class Footer extends Component {
           </div>
       
           <div className="d-flex justify-content-between py-4 my-4 border-top">
-            <p>&copy; 2021 Company, Inc. All rights reserved.</p>
+            <p>&copy; 2021 vashuprajapat, Inc. All rights reserved.</p>
             <ul className="list-unstyled d-flex">
               <li className="ms-3"><a className="link-dark" href="/insta"><svg className="bi" width="24" height="24"></svg></a></li>
               <li className="ms-3"><a className="link-dark" href="/twiiter"><svg className="bi" width="24" height="24"></svg></a></li>
               <li className="ms-3"><a className="link-dark" href="/facebook"><svg className="bi" width="24" height="24"></svg></a></li>
             </ul>
           </div>
+          </div>
         </footer>
-      </div>
+      </>
     )
   }
 }
