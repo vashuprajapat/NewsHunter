@@ -19,13 +19,14 @@ const [totalResults, setTotalResults] = useState(0)
     props.setProgress(30);
     let parsedData = await data.json()
     props.setProgress(50);
-    console.log(parsedData)
+    // console.log(parsedData)
     setLoading(false)
     setArticles(parsedData.articles)
     setTotalResults(parsedData.totalResults)
     props.setProgress(100);
   }
   useEffect(() => {
+    document.title = `NewsHunter - ${capitalizeFirstLowercaseRest(props.category)}`;
     updateNews()
   }, [])
   
@@ -35,15 +36,14 @@ const [totalResults, setTotalResults] = useState(0)
   };
 
   let fetchMoreData = async () => {
-    setPage(page+1)
     const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apikey=${props.apiKey}&pageSize=${props.pageSize}&page=${page + 1}`
+    setPage(page+1)
     let data = await fetch(url);
     let parsedData = await data.json()
-    console.log(parsedData)
+    // console.log(parsedData)
     setArticles(articles.concat(parsedData.articles))
     // setTotalResults(parsedData.totalResults)
   };
-  document.title = `NewsHunter - ${capitalizeFirstLowercaseRest(props.category)}`;
 
     return (
       <>
